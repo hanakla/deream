@@ -6,15 +6,15 @@ const hasKey = (target, property) => ({}).hasOwnProperty.call(target, property);
 const entries = object => Object.keys(object).map(key => [key, object[key]]);
 
 const parseArgs = args => {
-    let ignoreKeys = ['y'];
+    const ignoreKeys = ['y'];
 
     if (typeof args === 'string') {
         return args.split(' ');
     }
     else if (isObject(args)) {
-        let _args = [];
+        const _args = [];
 
-        for (let [key, value] of entries(args)) {
+        for (const [key, value] of entries(args)) {
             if (ignoreKeys.indexOf(key) !== -1) {
                 continue;
             }
@@ -51,7 +51,7 @@ module.exports = function deream(options = {}) {
     }
 
     const specificArgs = parseArgs(_options.args);
-    let args = ['-i', 'pipe:0', '-c:v', 'png_pipe', ...specificArgs, options.dest ? options.dest : 'pipe:1'];
+    const args = ['-i', 'pipe:0', '-c:v', 'png_pipe', ...specificArgs, options.dest ? options.dest : 'pipe:1'];
 
     if (hasKey(_options.args, 'y')) {
         args.unshift('-y');
