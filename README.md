@@ -26,7 +26,7 @@ const context = canvas.getContext('2d');
 
 // make 2seconds/30fps movie
 for (let i = 0; i < 60; i++) {
-    let frameHex = `00${i.toString(16)}`.slice(-2);
+    const frameHex = `00${i.toString(16)}`.slice(-2);
     context.fillStyle = ['#', frameHex, frameHex, frameHex].join('');
     context.fillRect(0, 0, 640, 360);
 
