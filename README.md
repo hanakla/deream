@@ -1,5 +1,7 @@
 # Deream
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Ragg-/deream.svg)](https://greenkeeper.io/)
+
 ## Example
 
 > Currently not perfectly support `.pipe(writableStream)`
