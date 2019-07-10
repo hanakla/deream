@@ -6,7 +6,7 @@
 
 ``` javascript
 import deream from 'deream';
-import Canvas from 'canvas';
+import { createCanvas } from 'canvas';
 
 const streamIn = deream({
     args: {
@@ -21,7 +21,7 @@ const streamIn = deream({
 });
 
 
-const canvas = new Canvas(640, 360);
+const canvas = createCanvas(640, 360);
 const context = canvas.getContext('2d');
 
 // make 2seconds/30fps movie
