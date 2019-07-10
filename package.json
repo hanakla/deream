@@ -25,6 +25,6 @@
     "duplexer3": "^0.1.4"
   },
   "devDependencies": {
-    "canvas": "^1.5.0"
+    "canvas": "^2.5.0"
   }
 }

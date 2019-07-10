@@ -1,5 +1,5 @@
 const deream = require('./index');
-const Canvas = require('canvas');
+const { createCanvas } = require('canvas');
 
 const streamIn = deream({
     args: {
@@ -14,7 +14,7 @@ const streamIn = deream({
 });
 
 
-const canvas = new Canvas(640, 360);
+const canvas = createCanvas(640, 360);
 const context = canvas.getContext('2d');
 
 // make 2seconds/30fps movie
