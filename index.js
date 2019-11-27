@@ -36,12 +36,8 @@ const parseArgs = (args) => {
  *      (Not set -i option and destination file in args option. it's specified in Deream)
  *      Ignore other all options ignored when args specified.
  */
-module.exports = function deream(options = {}) {
-  if (options.args === null || options.args === undefined) {
-    throw new Error('options.args must be specified');
-  }
-
-  if (options.dest === null || options.dest === undefined) {
+module.exports = function deream(options = {args: null, dest: 'pipe:1'}) {
+  if (options.args == null) {
     throw new Error('options.args must be specified');
   }
 
@@ -52,7 +48,7 @@ module.exports = function deream(options = {}) {
     '-c:v',
     'png_pipe',
     ...specificArgs,
-    options.dest ? options.dest : 'pipe:1'
+    options.dest
   ];
 
   if (hasKey(options.args, 'y')) {
