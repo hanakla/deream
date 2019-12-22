@@ -40,6 +40,9 @@ module.exports = function deream(options = {args: null, dest: 'pipe:1'}) {
   if (options.args == null) {
     throw new Error('options.args must be specified');
   }
+  if (options.dest == null) {
+    throw new Error('options.dest must be specified');
+  }
 
   const specificArgs = parseArgs(options.args);
   const args = [
